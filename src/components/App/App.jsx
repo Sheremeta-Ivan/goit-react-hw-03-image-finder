@@ -4,6 +4,7 @@ import SearchBar from '../SearchBar/SearchBar';
 import ImageGallery from '../ImageGallery/ImageGallery';
 import Loader from '../Loader/Loader';
 import Button from '../Button/Button';
+import ScrollButton from 'components/ScrollTop/ScrollTop';
 import { ToastContainer, toast, Slide } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -15,6 +16,7 @@ class App extends Component {
     error: null,
     isLoading: false,
     totalPages: 0,
+    visible: false,
   };
 
   componentDidUpdate(_, prevState) {
@@ -92,6 +94,7 @@ class App extends Component {
         {images.length > 0 && totalPages !== currentPage && !isLoading && (
           <Button onClick={this.loadMore} />
         )}
+        <ScrollButton />
       </div>
     );
   }

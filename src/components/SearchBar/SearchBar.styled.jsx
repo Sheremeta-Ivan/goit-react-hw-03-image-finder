@@ -51,7 +51,8 @@ export const SearchButton = styled.button`
   cursor: pointer;
   &:hover,
   &:focus {
-    background-color: rgba(255, 255, 126, 1);
+    color: #ffffff;
+    background-color: #0054c9;
   }
 `;
 
