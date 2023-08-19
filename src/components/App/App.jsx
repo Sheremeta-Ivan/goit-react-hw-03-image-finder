@@ -35,10 +35,19 @@ class App extends Component {
   };
 
   handleSubmit = query => {
+    const { searchName } = this.state;
+    if (searchName === query) {
+      return toast.warning('Please enter another request 😒', {
+        position: toast.POSITION.TOP_RIGHT,
+      });
+      // this.loadMore();
+      // return;
+    }
     this.setState({
       searchName: query,
       images: [],
       currentPage: 1,
+      totalPages: 0,
     });
   };
 
